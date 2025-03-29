@@ -30,4 +30,4 @@ def convert_text_to_speech():
     return send_file(OUTPUT_FILE, as_attachment=True)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port=1234, debug=True)
