@@ -47,6 +47,7 @@ If you face numpy-related errors, use the following version of numpy:
 3. Set Path variables
     - ADD "C:\Program Files (x86)\eSpeak" to Path
     - PHONEMIZER_ESPEAK_PATH -- C:\Program Files (x86)\eSpeak\command_line\espeak.exe
+    - PHONEMIZER_ESPEAK_LIBRARY" -- C:\Program Files (x86)\eSpeak\espeak_sap.dll
     - Test with `espeak --version` on cmd
 
 ### Compiler cl errors:
