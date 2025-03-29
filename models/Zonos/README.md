@@ -26,7 +26,7 @@ pip install -e .
 
 ## Inference
 
-For running on colab, import [inference](inference.ipynb) to Colab and run all the cells directly (Use GPU/TPUfor faster inference).
+For running on colab, import [inference](inference.ipynb) to Colab and run all the cells directly (Use GPU/TPU for faster inference).
 
 ## REST Api
 
