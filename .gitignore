@@ -171,3 +171,5 @@ cython_debug/
 .pypirc
 
 models/Coqui/uploads/
+
+models/Spark/Spark_TTS/pretrained_models

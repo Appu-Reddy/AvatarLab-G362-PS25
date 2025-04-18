@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify, send_file
-from flask_cors import CORS
+from flask import Flask, request, jsonify, send_file # type: ignore
+from flask_cors import CORS # type: ignore
 import sys
 import os
 
@@ -18,9 +18,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'zonos')
 
 import torch
 import torchaudio
-from zonos.model import Zonos
-from zonos.conditioning import make_cond_dict
-from zonos.utils import DEFAULT_DEVICE as device
+from zonos.model import Zonos # type: ignore
+from zonos.conditioning import make_cond_dict # type: ignore
+from zonos.utils import DEFAULT_DEVICE as device # type: ignore
 
 app = Flask(__name__)
 CORS(app)
@@ -52,6 +52,7 @@ def TTS():
     text = request.form["text"]
 
     try:
+        print("Sampling the audio...")
         wav, sampling_rate = torchaudio.load(audio_file)
         speaker = model.make_speaker_embedding(wav, sampling_rate)
 
@@ -62,6 +63,7 @@ def TTS():
         return jsonify({"status": f"Error in sampling: {str(e)}"}), 500
 
     try:
+        print("Generating audio...")
         codes = model.generate(conditioning)
         wavs = model.autoencoder.decode(codes).cpu()
 
@@ -75,4 +77,4 @@ def TTS():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=1234, debug=True)
+    app.run(host="10.11.16.189", port=1234, debug=True)
